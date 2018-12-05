@@ -1,0 +1,8 @@
+# General
+*.log
+*.txt
+
+#ide
+*.sln
+*.vcxproj
+Debug
