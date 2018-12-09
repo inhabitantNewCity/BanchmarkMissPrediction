@@ -29,15 +29,17 @@ double do_branch(bool sorting) {
 	return static_cast<double>(clock() - start) / CLOCKS_PER_SEC;
 }
 
-int main()
+int main(int argc, char *argv[])
 {	
+	int executionMode;
+	executionMode = atoi(argv[1]);
+
 	std::cout << " Banchmark for calculating sum of elements" << std::endl;
-
-	double NonSortAndNonCond = do_branch(false);
-	std::cout << " time without Sort: " << NonSortAndNonCond << std::endl;
-	
-	double SortAndNonCond = do_branch(true);
-	std::cout << " time with Sort: " << SortAndNonCond << std::endl;
-
-	getchar();
+	if (executionMode == 0) {
+		std::cout << " withot sorting mode" << std::endl;
+		std::cout << " time: " << do_branch(false) << std::endl;
+	} else {
+		std::cout << " sorting mode" << std::endl;
+		std::cout << " time: " << do_branch(true) << std::endl;
+	}
 }
